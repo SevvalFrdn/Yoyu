@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Yoyu_proje10_.Models.SergiModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Sergi Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EY")
+</p>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiAcilisTarihi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiKapanisTarihi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiAdres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiTelefon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiBiletFiyat)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiAcilisTarihi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiKapanisTarihi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiAdres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiTelefon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiBiletFiyat)
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SergiAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SergiAcilisTarihi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SergiKapanisTarihi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SergiAdres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SergiTelefon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SergiBiletFiyat)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EY", new { id = item.SergiNo }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SergiNo })
+                    </td>
+                </tr>
+            </tbody>
+        }
+
+    </table>
+</div>

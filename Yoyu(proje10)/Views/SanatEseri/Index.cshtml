@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Yoyu_proje10_.Models.SanatEseriModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Sanat Eseri Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EY")
+</p>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriTuru)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriYil)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriFiyat)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriTuru)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriYil)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatEseriFiyat)
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+
+
+            @foreach (var item in Model)
+            {
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SanatciNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SanatEseriAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SanatEseriTuru)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SanatEseriYil)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SanatEseriFiyat)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EY", new { id = item.SanatEseriNo }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SanatEseriNo })
+                    </td>
+                </tr>
+            </tbody>
+        }
+
+        </table>
+</div>

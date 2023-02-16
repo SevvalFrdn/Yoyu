@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Yoyu_proje10_.Models.SiparisModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageUser.cshtml";
+}
+
+<h2>Sipariş Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EY")
+</p>
+<table class="table" bgcolor="#808080">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MusteriNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiparisAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiparisTarih)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MusteriNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiparisAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiparisTarih)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EY", new { id = item.SiparisNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SiparisNo })
+        </td>
+    </tr>
+}
+
+</table>

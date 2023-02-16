@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Yoyu_proje10_.Models.SanatciModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+<h2>Sanatçı Listele</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EY")
+</p>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciSoyadi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciDogumTarihi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciAdres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciTelefon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciDeneyimYil)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiNo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciSoyadi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciDogumTarihi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciAdres)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciTelefon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SanatciDeneyimYil)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SergiNo)
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+
+        @foreach (var item in Model)
+        {<tbody>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanatciAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanatciSoyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanatciDogumTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanatciAdres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanatciTelefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SanatciDeneyimYil)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SergiNo)
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EY", new { id = item.SanatciNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SanatciNo })
+        </td>
+    </tr>
+</tbody>
+        }
+
+    </table>
+    </div>
